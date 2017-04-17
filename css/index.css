@@ -1,0 +1,148 @@
+/*CSS Document*/
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dd,input,{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: 12px;
+}
+img{
+    border:none;
+}
+input,select,textarea{
+    outline: none;
+}
+textarea{
+    resize: none;
+}
+a{
+    text-decoration:none;
+}
+/*清浮动*/
+.clearfix:after{
+    content:"";
+    display: block;
+    clear: both;
+}
+.clearfix{
+    zoom:1;
+}
+/*导航条去除bootstrap默认圆弧，padding和margin值为0*/
+.navbar-inverse{
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    border-bottom: none;
+}
+
+.container{
+    width:950px;
+}
+.navbar-nav a{
+    color: #fff;
+    font-size: 14px;
+    font-family: "Microsoft YaHei","微软雅黑";
+}
+
+/*主页板块*/
+.hero{
+    background-color: #2d2d2d;
+    height:300px;
+}
+
+/*主页部分的文字样式，大标题和段落*/
+.text{
+    margin-top: 50px;
+}
+.hero-logo{
+    color:#61dafb;
+    font-weight: 400;
+    font-size: 60px;
+    text-align: center;    
+}
+
+.hero-text{
+    color:#fff;
+    font-size: 15px;
+     text-align: center; 
+     opacity: 0.9;  
+}
+/*主页面按钮的样式*/
+.button{
+    text-align: center;
+    margin-top: 60px;
+    
+}
+
+.btn-danger{
+    font-size: 25px;
+    margin-left: 20px;
+    background-color:#cc7a6f;
+    border:none;
+}
+
+/*正文文字描述maintext*/
+.maintext{
+    margin: 60px 0;
+}
+
+.maintext p{
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+.maintext span{
+    color:#cc7a6f
+}
+
+.divider{
+    width: 400px;
+    border-top-color: #bbb;
+   
+}
+
+hr{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #eee;
+}
+
+/*举例代码部分*/
+.example{
+    margin: 80px 0;
+}
+.example p{
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+.example code{
+    color: #000;
+}
+
+.nav-tabs{
+    padding-top: 15px;
+}
+
+.preview1, .preview2{
+    float: right;
+    padding: 15px 20px;
+    font-size: 16px;
+    width: 280px;
+    height: 52px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: #fff;
+    word-wrap: break-word;
+    
+}
+.preview1{
+    margin-top:280px;
+}
+
+.preview2{
+    margin-top:210px;
+}
+
+
+
+

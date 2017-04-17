@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>A JavaScript library for building user interfaces - React</title>
+    <!-- Bootstrap -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <nav class="navbar navbar-inverse">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+           
+            <a class="navbar-brand" href="#">React</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Docs <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Tutorial</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search Docs...">
+                </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Github</a></li>
+                <li><a href="#">v15.4.2</a></li>
+            </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <!--banner部分-->
+    <div class="hero">
+        <div class="container">
+            <div class="text">
+                <p class="hero-logo">React</p>
+                <p class="hero-text">A JAVASCRIPT LIBRARY FOR BUILDING USER INTERFACES</p>
+            </div>
+            <div class="button">
+                 <button type="button" class="btn btn-danger ">Get Started</button>
+                 <button type="button" class="btn btn-danger">Take the Tutorial</button>
+            </div>
+        </div>
+    </div>
+
+<!--主文字部分-->
+    <div class="maintext">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 ">
+                    <h3>Declarative</h3>
+                    <p>React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.</p>
+                    <p>Declarative views make your code more predictable and easier to debug.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Component-Based</h3>
+                    <p>Build encapsulated components that manage their own state, then compose them to make complex UIs.</p>
+                    <p>Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Learn Once,</h3>
+                    <h3>Write Anywhere</h3>
+                    <p>We don't make assumptions about the rest of your technology stack, so you can develop new features in React without rewriting existing code.</p>
+                    <p>React can also render on the server using Node and power mobile apps using <span>React Native</span>.</p>   
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <!--分隔线-->
+    <hr class="divider">
+<!--各种component-->
+    <div class="example">
+        <div class="container">
+            <div class="row">
+                 <div class="col-md-8 ">
+                     <h3>A Simple Component</h3>
+                     <p>React components implement a <code>render()</code> method that takes input data and returns what to display. This example uses an XML-like syntax called JSX. Input data that is passed into the component can be accessed by <code>render()</code> via <code>this.props</code>.</p>
+                     <p><strong>JSX is optional and not required to use React. </strong> clicking on "Compiled JS" to see the raw JavaScript code produced by the JSX compiler.</p>
+
+                     <div>
+
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Live JSX Editor</a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Compiled JS</a></li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home">
+                                <pre>
+class HelloMessage extends React.Component {
+  render() {
+    return <div>Hello {this.props.name}</div>;
+  }
+}
+
+ReactDOM.render(<HelloMessage name="Jane" />, mountNode);
+                                </pre>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile">
+                                <pre>
+class HelloMessage extends React.Component {
+  render() {
+    return React.createElement(
+      "div",
+      null,
+      "Hello ",
+      this.props.name
+    );
+  }
+}
+
+ReactDOM.render(React.createElement(HelloMessage, { name: "Jane" }), mountNode);
+                               </pre>
+                            </div>
+                        </div>
+                        </div>
+                 </div>
+                 <div class="col-md-4 ">
+                      <div class="preview1">Hello Jane</div>
+                 </div>
+            </div>
+             
+            <div class="row">
+                 <div class="col-md-8 ">
+                     <h3>A Stateful Component</h3>
+                     <p>In addition to taking input data (accessed via <code>this.props</code>), a component can maintain internal state data (accessed via <code>this.state</code>). When a component's state data changes, the rendered markup will be updated by re-invoking <code>render()</code>.</p>
+
+                     <div>
+
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Live JSX Editor</a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Compiled JS</a></li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home">
+                                <pre>
+class Timer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {secondsElapsed: 0};
+  }
+
+  tick() {
+    this.setState((prevState) => ({
+      secondsElapsed: prevState.secondsElapsed + 1
+    }));
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => this.tick(), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  render() {
+    return (
+      <div>Seconds Elapsed: {this.state.secondsElapsed}</div>
+    );
+  }
+}
+
+ReactDOM.render(<Timer />, mountNode);
+                                </pre>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile">
+                                <pre>
+class Timer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { secondsElapsed: 0 };
+  }
+
+  tick() {
+    this.setState(prevState => ({
+      secondsElapsed: prevState.secondsElapsed + 1
+    }));
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => this.tick(), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  render() {
+    return React.createElement(
+      "div",
+      null,
+      "Seconds Elapsed: ",
+      this.state.secondsElapsed
+    );
+  }
+}
+
+ReactDOM.render(React.createElement(Timer, null), mountNode);
+                               </pre>
+                            </div>
+                        </div>
+                        </div>
+                 </div>
+                 <div class="col-md-4 ">
+                      <div class="preview2" id="countSeconds">Seconds Elapsed: </div>
+                 </div>
+            </div>
+
+            <div class="row">
+                 <div class="col-md-8 ">
+                     <h3>An Application</h3>
+                     <p>Using props and state, we can put together a small Todo application. This example uses state to track the current list of items as well as the text that the user has entered. Although event handlers appear to be rendered inline, they will be collected and implemented using event delegation..</p>
+
+                     <div>
+
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Live JSX Editor</a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Compiled JS</a></li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home">
+                                <pre>
+class TodoApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {items: [], text: ''};
+  }
+
+  render() {
+    return (
+      <div>
+        <h3>TODO</h3>
+        <TodoList items={this.state.items} />
+        <form onSubmit={this.handleSubmit}>
+          <input onChange={this.handleChange} value={this.state.text} />
+          <button>{'Add #' + (this.state.items.length + 1)}</button>
+        </form>
+      </div>
+    );
+  }
+
+  handleChange(e) {
+    this.setState({text: e.target.value});
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    var newItem = {
+      text: this.state.text,
+      id: Date.now()
+    };
+    this.setState((prevState) => ({
+      items: prevState.items.concat(newItem),
+      text: ''
+    }));
+  }
+}
+
+class TodoList extends React.Component {
+  render() {
+    return (
+      <ul>
+        {this.props.items.map(item => (
+          <li key={item.id}>{item.text}</li>
+        ))}
+      </ul>
+    );
+  }
+}
+
+ReactDOM.render(<TodoApp />, mountNode);
+                                </pre>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile">
+                                <pre>
+class TodoApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = { items: [], text: '' };
+  }
+
+  render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'h3',
+        null,
+        'TODO'
+      ),
+      React.createElement(TodoList, { items: this.state.items }),
+      React.createElement(
+        'form',
+        { onSubmit: this.handleSubmit },
+        React.createElement('input', { onChange: this.handleChange, value: this.state.text }),
+        React.createElement(
+          'button',
+          null,
+          'Add #' + (this.state.items.length + 1)
+        )
+      )
+    );
+  }
+
+  handleChange(e) {
+    this.setState({ text: e.target.value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    var newItem = {
+      text: this.state.text,
+      id: Date.now()
+    };
+    this.setState(prevState => ({
+      items: prevState.items.concat(newItem),
+      text: ''
+    }));
+  }
+}
+
+class TodoList extends React.Component {
+  render() {
+    return React.createElement(
+      'ul',
+      null,
+      this.props.items.map(item => React.createElement(
+        'li',
+        { key: item.id },
+        item.text
+      ))
+    );
+  }
+}
+
+ReactDOM.render(React.createElement(TodoApp, null), mountNode);
+                               </pre>
+                            </div>
+                        </div>
+                        </div>
+                 </div>
+                 <div class="col-md-4 ">
+                      <div class="preview3" id="countSeconds">
+                          <p>TODO</p>
+                          <input type="text">
+                          <button>add #1</button>
+                          </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/bootstrap.min.js"></script>
+  </body>
+</html>
