@@ -186,12 +186,12 @@ class Timer extends React.Component {
 
   render() {
     return (
-      <div>Seconds Elapsed: {this.state.secondsElapsed}</div>
+      &lt;div&gt;Seconds Elapsed: {this.state.secondsElapsed}&lt;/div&gt;
     );
   }
 }
 
-ReactDOM.render(<Timer />, mountNode);
+ReactDOM.render(&lt;Timer /gt;, mountNode);
                                 </pre>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="profile">
@@ -264,14 +264,14 @@ class TodoApp extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>TODO</h3>
-        <TodoList items={this.state.items} />
-        <form onSubmit={this.handleSubmit}>
-          <input onChange={this.handleChange} value={this.state.text} />
-          <button>{'Add #' + (this.state.items.length + 1)}</button>
-        </form>
-      </div>
+      &lt;div&gt;
+        &lt;h3>TODO&lt;/h3&gt;
+        &lt;TodoList items={this.state.items} /&gt;
+        &lt;form onSubmit={this.handleSubmit}&gt;
+          &lt;input onChange={this.handleChange} value={this.state.text} /&gt;
+          &lt;button>{'Add #' + (this.state.items.length + 1)}&lt;/button&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
     );
   }
 
@@ -295,16 +295,16 @@ class TodoApp extends React.Component {
 class TodoList extends React.Component {
   render() {
     return (
-      <ul>
+      &lt;ul&gt;
         {this.props.items.map(item => (
-          <li key={item.id}>{item.text}</li>
+           &lt;li key={item.id}>{item.text} &lt;/li&gt;
         ))}
-      </ul>
+       &lt;/ul&gt;
     );
   }
 }
 
-ReactDOM.render(<TodoApp />, mountNode);
+ReactDOM.render( &lt;TodoApp /&gt;, mountNode);
                                 </pre>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="profile">
@@ -385,8 +385,123 @@ ReactDOM.render(React.createElement(TodoApp, null), mountNode);
                           </div>
                  </div>
             </div>
+              <div class="row">
+                 <div class="col-md-8 ">
+                     <h3>An Application</h3>
+                     <p>Using props and state, we can put together a small Todo application. This example uses state to track the current list of items as well as the text that the user has entered. Although event handlers appear to be rendered inline, they will be collected and implemented using event delegation.</p>
+
+                     <div>
+
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Live JSX Editor</a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Compiled JS</a></li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home">
+                                <pre>
+class MarkdownEditor extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.state = {value: 'Type some *markdown* here!'};
+  }
+
+  handleChange(e) {
+    this.setState({value: e.target.value});
+  }
+
+  getRawMarkup() {
+    var md = new Remarkable();
+    return { __html: md.render(this.state.value) };
+  }
+
+  render() {
+    return (
+      &lt;div className="MarkdownEditor">
+        &lt;h3>Input&lt;/h3&gt;
+        &lt;textarea
+          onChange={this.handleChange}
+          defaultValue={this.state.value} /&gt;
+        &lt;h3>Output&lt;/h3&gt;
+        &lt;div
+          className="content"
+          dangerouslySetInnerHTML={this.getRawMarkup()}
+        /&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+ReactDOM.render(&lt;MarkdownEditor /&gt;, mountNode);
+                                </pre>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile">
+                                <pre>
+class MarkdownEditor extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.state = { value: 'Type some *markdown* here!' };
+  }
+
+  handleChange(e) {
+    this.setState({ value: e.target.value });
+  }
+
+  getRawMarkup() {
+    var md = new Remarkable();
+    return { __html: md.render(this.state.value) };
+  }
+
+  render() {
+    return React.createElement(
+      "div",
+      { className: "MarkdownEditor" },
+      React.createElement(
+        "h3",
+        null,
+        "Input"
+      ),
+      React.createElement("textarea", {
+        onChange: this.handleChange,
+        defaultValue: this.state.value }),
+      React.createElement(
+        "h3",
+        null,
+        "Output"
+      ),
+      React.createElement("div", {
+        className: "content",
+        dangerouslySetInnerHTML: this.getRawMarkup()
+      })
+    );
+  }
+}
+
+ReactDOM.render(React.createElement(MarkdownEditor, null), mountNode);
+                               </pre>
+                            </div>
+                        </div>
+                        </div>
+                 </div>
+                 <div class="col-md-4 ">
+                      <div class="preview4" id="countSeconds">
+                          <h3>Input</h3>
+                          <input type="text" class="input-text" placeholder="Type some *markdown* here!">
+                          <h3>Output</h3>
+                          <p>Type some <em>markdown</em> here!</p>
+                          </div>
+                 </div>
+            </div>
+  
         </div>
     </div>
+
+     <!--分隔线-->
+    <hr class="divider">
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="./js/jquery-1.11.1.min.js"></script>

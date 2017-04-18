@@ -123,26 +123,49 @@ hr{
     padding-top: 15px;
 }
 
-.preview1, .preview2{
+.preview1, .preview2, .preview3, .preview4{
     float: right;
     padding: 15px 20px;
     font-size: 16px;
-    width: 280px;
-    height: 52px;
     border: 1px solid #ccc;
     border-radius: 2px;
     background-color: #fff;
     word-wrap: break-word;
-    
+     width: 280px;
 }
 .preview1{
     margin-top:280px;
+    height: 52px;
 }
 
 .preview2{
     margin-top:210px;
+    height: 52px;
 }
 
+.preview3{
+    height: 110px;
+    margin-top: 230px;
+}
+.preview3 input{
+    float: left;
+    width: 60%;
+}
 
+.preview3 button{
+    margin-left: 10px;
+    font-size: 14px;
+}
 
+.preview4{
+    height: 320px;
+    margin-top: 230px;
+}
+
+.preview4 .input-text{
+    width:240px;
+    height: 96px;
+    font-size: 10px;
+    color: #000;
+}
 
